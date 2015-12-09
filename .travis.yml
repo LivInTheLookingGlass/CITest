@@ -1,0 +1,36 @@
+matrix:
+  allow_failures:
+    - env: Cov='true' UPnP='true'
+    - env: Cov='true' UPnP='false'
+    - os: osx
+  include:
+    - language: cpp
+      python: 2.7
+      os: osx
+      env: Cov='true' UPnP='true'
+    - language: cpp
+      python: 2.7
+      os: osx
+      env: Cov='true' UPnP='false'
+    - language: cpp
+      python: 3.5
+      os: osx
+      env: Cov='true' UPnP='true'
+    - language: cpp
+      python: 3.5
+      os: osx
+      env: Cov='true' UPnP='false'
+before_install:
+  - echo $TRAVIS_OS_NAME;
+  - if [ $TRAVIS_OS_NAME == "osx" ]; then wget https://raw.githubusercontent.com/pyca/cryptography/master/.travis/install.sh; sh install.sh; fi
+  - if [ $Cov == 'true'  ]; then pyver=$(python -c 'import sys; print(".".join(map(str, sys.version_info[:3])))'); echo $pyver; if ! [[ $pyver =~ 3\.6\.* ]]; then pip install coverage==3.7.1 ; fi; pip install codecov; fi
+install: 
+  - if [ $UPnP == 'true'  ]; then pip install miniupnpc; fi
+  - pip install -r requirements.txt
+  - pip install -r optional.txt
+# command to run tests
+script: 
+  - if [ $Cov == 'true'  ]; then coverage run -a main.py; fi
+  - if [ $Cov == 'false' ]; then python main.py; fi
+  - if [ $Cov == 'true'  ]; then coverage run -a test.py; fi
+  - if [ $Cov == 'false' ]; then python test.py; fi
