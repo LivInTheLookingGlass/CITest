@@ -25,9 +25,7 @@ before_install:
   - if [ $TRAVIS_OS_NAME == "osx" ]; then wget https://raw.githubusercontent.com/pyca/cryptography/master/.travis/install.sh; sh install.sh; fi
   - if [ [$Cov == 'true'] && [$TRAVIS_OS_NAME == "osx"] ]; then pyver=$(python -c 'import sys; print(".".join(map(str, sys.version_info[:3])))'); echo $pyver; if ! [[ $pyver =~ 3\.6\.* ]]; then pip install coverage==3.7.1 ; fi; pip install codecov; fi
 install: 
-  - if [ $UPnP == 'true'  ]; then pip install miniupnpc; fi
-  - pip install -r requirements.txt
-  - pip install -r optional.txt
+  - if [ $UPnP == 'true'  ]; then sudo pip install miniupnpc; fi
 # command to run tests
 script: 
   - if [ $Cov == 'true'  ]; then coverage run -a main.py; fi
