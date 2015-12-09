@@ -4,19 +4,19 @@ matrix:
     - env: Cov='true' UPnP='false'
     - os: osx
   include:
-    - language: cpp
+    - language: go
       python: 2.7
       os: osx
       env: Cov='true' UPnP='true'
-    - language: cpp
+    - language: go
       python: 2.7
       os: osx
       env: Cov='true' UPnP='false'
-    - language: cpp
+    - language: go
       python: 3.5
       os: osx
       env: Cov='true' UPnP='true'
-    - language: cpp
+    - language: go
       python: 3.5
       os: osx
       env: Cov='true' UPnP='false'
