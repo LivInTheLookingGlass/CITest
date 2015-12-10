@@ -14,7 +14,8 @@ env:
   - Cov='true' UPnP='true' coverage="coverage" pipinstall="pip install"
   - Cov='true' UPnP='false' coverage="coverage" pipinstall="pip install"
   - Cov='false' UPnP='true' coverage="coverage" pipinstall="pip install"
-  - Cov='false' UPnP='false' coverage="coverage" pipinstall="pip install"matrix:
+  - Cov='false' UPnP='false' coverage="coverage" pipinstall="pip install"
+matrix:
   include:
     - language: generic
       python: 2.6
