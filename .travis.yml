@@ -1,8 +1,4 @@
 matrix:
-  allow_failures:
-    - env: Cov='true' UPnP='true'
-    - env: Cov='true' UPnP='false'
-    - os: osx
   include:
     - language: java
       python: 2.7
