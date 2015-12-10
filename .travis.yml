@@ -3,19 +3,19 @@ matrix:
     - language: java
       python: 2.7
       os: osx
-      env: Cov='true' UPnP='true'
+      env: Cov='false' UPnP='true' TOXENV=py27
     - language: java
       python: 2.7
       os: osx
-      env: Cov='true' UPnP='false'
+      env: Cov='false' UPnP='false' TOXENV=py27
     - language: java
       python: 3.5
       os: osx
-      env: Cov='true' UPnP='true'
+      env: Cov='false' UPnP='true' TOXENV=py35
     - language: java
       python: 3.5
       os: osx
-      env: Cov='true' UPnP='false'
+      env: Cov='false' UPnP='false' TOXENV=py35
 before_install:
   - echo $TRAVIS_OS_NAME;
   - if [ $TRAVIS_OS_NAME == "osx" ]; then wget https://raw.githubusercontent.com/pyca/cryptography/master/.travis/install.sh; sh install.sh; fi
