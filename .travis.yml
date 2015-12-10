@@ -24,6 +24,7 @@ install:
   - if [ $UPnP == 'true'  ]; then sudo pip install miniupnpc; fi
 # command to run tests
 script: 
+  - python --version
   - if [ $Cov == 'true'  ]; then python -m coverage run -a main.py; fi
   - if [ $Cov == 'false' ]; then python main.py; fi
   - if [ $Cov == 'true'  ]; then python -m coverage run -a test.py; fi
