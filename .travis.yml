@@ -83,7 +83,7 @@ matrix:
 before_install:
   - echo $TRAVIS_OS_NAME;
   - if [ $TRAVIS_OS_NAME == "osx" ]; then wget https://raw.githubusercontent.com/pyca/cryptography/master/.travis/install.sh; sh install.sh; fi
-  - if [$Cov == 'true']; then pyver=$(python -c 'import sys; print(".".join(map(str, sys.version_info[:3])))'); echo $pyver; if ! [[ $pyver =~ 3\.6\.* ]]; then $pipinstall coverage==3.7.1 ; fi; $pipinstall codecov; fi
+  - if [ $Cov == 'true'  ]; then pyver=$(python -c 'import sys; print(".".join(map(str, sys.version_info[:3])))'); echo $pyver; if ! [[ $pyver =~ 3\.6\.* ]]; then $pipinstall coverage==3.7.1 ; fi; $pipinstall codecov; fi
 install: 
   - if [ $UPnP == 'true'  ]; then $pipinstall miniupnpc; fi
 # command to run tests
