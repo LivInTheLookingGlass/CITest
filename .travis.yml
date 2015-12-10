@@ -9,6 +9,14 @@ matrix:
       os: osx
       env: Cov='false' UPnP='false' TOXENV=py26
     - language: generic
+      python: 2.6
+      os: osx
+      env: Cov='true' UPnP='true' TOXENV=py26
+    - language: generic
+      python: 2.6
+      os: osx
+      env: Cov='true' UPnP='false' TOXENV=py26
+    - language: generic
       python: 2.7
       os: osx
       env: Cov='false' UPnP='true' TOXENV=py27
@@ -16,6 +24,14 @@ matrix:
       python: 2.7
       os: osx
       env: Cov='false' UPnP='false' TOXENV=py27
+    - language: generic
+      python: 2.7
+      os: osx
+      env: Cov='true' UPnP='true' TOXENV=py27
+    - language: generic
+      python: 2.7
+      os: osx
+      env: Cov='true' UPnP='false' TOXENV=py27
     - language: generic
       python: 3.3
       os: osx
@@ -25,6 +41,14 @@ matrix:
       os: osx
       env: Cov='false' UPnP='false' TOXENV=py33
     - language: generic
+      python: 3.3
+      os: osx
+      env: Cov='true' UPnP='true' TOXENV=py33
+    - language: generic
+      python: 3.3
+      os: osx
+      env: Cov='true' UPnP='false' TOXENV=py33
+    - language: generic
       python: 3.4
       os: osx
       env: Cov='false' UPnP='true' TOXENV=py34
@@ -33,6 +57,14 @@ matrix:
       os: osx
       env: Cov='false' UPnP='false' TOXENV=py34
     - language: generic
+      python: 3.4
+      os: osx
+      env: Cov='true' UPnP='true' TOXENV=py34
+    - language: generic
+      python: 3.4
+      os: osx
+      env: Cov='true' UPnP='false' TOXENV=py34
+    - language: generic
       python: 3.5
       os: osx
       env: Cov='false' UPnP='true' TOXENV=py35
@@ -40,6 +72,14 @@ matrix:
       python: 3.5
       os: osx
       env: Cov='false' UPnP='false' TOXENV=py35
+    - language: generic
+      python: 3.5
+      os: osx
+      env: Cov='true' UPnP='true' TOXENV=py35
+    - language: generic
+      python: 3.5
+      os: osx
+      env: Cov='true' UPnP='false' TOXENV=py35
 before_install:
   - echo $TRAVIS_OS_NAME;
   - if [ $TRAVIS_OS_NAME == "osx" ]; then wget https://raw.githubusercontent.com/pyca/cryptography/master/.travis/install.sh; sh install.sh; fi
