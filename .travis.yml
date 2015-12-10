@@ -50,6 +50,22 @@ matrix:
       os: osx
       env: Cov='true' UPnP='false' TOXENV=py27 coverrun="python -m coverage run" pipinstall="sudo pip install"
     - language: generic
+      python: 3.2
+      os: osx
+      env: Cov='false' UPnP='true' TOXENV=py32 coverrun="python -m coverage run" pipinstall="sudo pip install"
+    - language: generic
+      python: 3.2
+      os: osx
+      env: Cov='false' UPnP='false' TOXENV=py32 coverrun="python -m coverage run" pipinstall="sudo pip install"
+    - language: generic
+      python: 3.2
+      os: osx
+      env: Cov='true' UPnP='true' TOXENV=py32 coverrun="python -m coverage run" pipinstall="sudo pip install"
+    - language: generic
+      python: 3.2
+      os: osx
+      env: Cov='true' UPnP='false' TOXENV=py32 coverrun="python -m coverage run" pipinstall="sudo pip install"
+    - language: generic
       python: 3.3
       os: osx
       env: Cov='false' UPnP='true' TOXENV=py33 coverrun="python -m coverage run" pipinstall="sudo pip install"
