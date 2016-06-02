@@ -15,7 +15,7 @@ python:
 
 build:
   ci:
-    - pyver=$(python -c 'import sysprint(".".join(map(str, sys.version_info[:3])))')
+    - pyver=$(python -c 'import sys; print(".".join(map(str, sys.version_info[:3])))')
     - echo $pyver
     - if ! [[ $pyver =~ 3\.6\.* ]]; then python -m pip install coverage==3.7.1 ; fi
     - python -m pip install codecov
