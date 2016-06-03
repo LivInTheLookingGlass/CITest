@@ -10,5 +10,4 @@ Steps to integrate:
   2. Appveyor.org
   3. Shippable.org
 3. Change Appveyor's yaml file to ".appveyor.yml"
-4. Add shippable's deploy key to your repo
-5. In each of the yaml files, change the "test.py" line to run your actual tests
+4. In each of the yaml files, change the "test.py" line to run your actual tests
