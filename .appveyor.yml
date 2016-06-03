@@ -96,21 +96,17 @@ init:
   - "ECHO %PYTHON% %PYTHON_VERSION% %PYTHON_ARCH% %APPVEYOR_BUILD_FOLDER%"
  
 install:
-#  - "powershell appveyor\\install.ps1"
   - "set HOME=%APPVEYOR_BUILD_FOLDER%"
   - "%PYPY%"
   - "%PIP% install codecov"
   - "cd %HOME%"
-  - "%PIP% install -r requirements.txt"
-  - "%UPnP%"
+#  - "%PIP% install -r requirements.txt"
  
 test: off
  
 build_script:
   - "cd %HOME%"
-  - "%COV% run -a test.py -tvvv"
-  - sleep 5
-  - "%COV% run -a main.py -tvvv -p 44565"
+  - "%COV% run -a test.py"
   - "type output.txt"
   
 on_success:
