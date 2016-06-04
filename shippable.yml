@@ -23,4 +23,4 @@ build:
     - coverage run -a test.py
   on_success:
     - coverage combine
-#    - codecov --token=0482d032-e24c-461b-a116-f0e3dbc8 
+    - codecov --token=9c51d155-86c2-4b30-ae60-cba2a13e21a9
