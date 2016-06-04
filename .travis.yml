@@ -3,9 +3,9 @@ repo_token: qtRAezgFkEsUBFIQrtXCxQRe2arC3H9Ta
 matrix:
   include:
     - language: generic-covered
-      python: 2.7
+      python: 2.6
       os: osx
-      env: Cov='true' pyver=2.7.11 pydist=macpython
+      env: Cov='true' pyver=2.6.6 pydist=macpython
     - language: generic-covered
       python: 2.7
       os: osx
