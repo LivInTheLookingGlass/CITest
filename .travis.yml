@@ -7,6 +7,10 @@ matrix:
       os: osx
       env: Cov='true' pyver=2.7.11 pydist=macpython
     - language: generic-covered
+      python: 2.7
+      os: osx
+      env: Cov='true' pyver=2.7.11 pydist=macpython
+    - language: generic-covered
       python: 3.3
       os: osx
       env: Cov='true' pyver=3.3.5 pydist=macpython
@@ -72,7 +76,7 @@ before_install:
   - source terryfy/travis_tools.sh
   - get_python_environment  $pydist $pyver
   - echo $PYTHON_EXE
-  - if [ $Cov == 'true'  ]; then pyver=$($PYTHON_EXE -c 'import sys; print(".".join(map(str, sys.version_info[:3])))'); echo $pyver; if ! [[ $pyver =~ 3\.6\.* ]]; then $PIP_CMD coverage==3.7.1 ; fi; $PIP_CMD codecov; fi
+  - if [ $Cov == 'true'  ]; then pyver=$($PYTHON_EXE -c 'import sys; print(".".join(map(str, sys.version_info[:3])))'); echo $pyver; if ! [[ $pyver =~ 3\.6\.* ]]; then $PIP_CMD install coverage==3.7.1 ; fi; $PIP_CMD install codecov; fi
 #install: 
 #  - if [ $UPnP == 'true'  ]; then $pipinstall miniupnpc; fi
 #  - $pipinstall -r requirements.txt
