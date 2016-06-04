@@ -8,7 +8,7 @@ Steps to integrate:
 2. Enable CI integration on the following websites
   1. Travis-ci.org
   2. Appveyor.org
-  3. Shippable.org
+  3. Shippable.com
 4. Enable your project on waffle.io
 5. Add your repo to codeclimate.com (https://codeclimate.com/github/[username]/[repo name])
 6. On CodeClimate's website, enable the hooks for pull requests and issues
@@ -31,7 +31,7 @@ This is normally used for Linux testing. It also has some OSX machines. While py
 
 This is a Windows test environment. It does both x86 and x64. I managed to powershell my way into enabling pypy.
 
-### Shippable.org
+### Shippable.com
 
 This one is relatively new to me. It does lots of linux testing, and seems to work fairly well, if not as well as Travis-CI where concurrency is concerned.
 
