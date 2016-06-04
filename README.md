@@ -15,3 +15,4 @@ Steps to integrate:
   1. Shippable uses a project token. This means you need to copy it from your Shippable url
 6. Codecov uses a project token for its code uploads. Change this in the yaml files to that of your project
   * Get this token by logging into codecov.io and going to https://codecov.io/gh/[username]/[reponame]
+  * Note: Looking at the coverage reports can be confusing, since codecov recognizes Shippable and Travis as Travis. You can tell them apart by the TRAVIS_OS_NAME flag.
