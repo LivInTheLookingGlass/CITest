@@ -3,10 +3,6 @@ repo_token: qtRAezgFkEsUBFIQrtXCxQRe2arC3H9Ta
 matrix:
   include:
     - language: generic-covered
-      python: 2.6
-      os: osx
-      env: Cov='true' pyver=2.6.6 pydist=macpython 
-    - language: generic-covered
       python: 2.7
       os: osx
       env: Cov='true' pyver=2.7.11 pydist=macpython
@@ -75,7 +71,8 @@ before_install:
   - git clone https://github.com/MacPython/terryfy
   - source terryfy/travis_tools.sh
   - get_python_environment  $pydist $pyver
-  - if [ $Cov == 'true'  ]; then pyver=$($PYTHON_CMD -c 'import sys; print(".".join(map(str, sys.version_info[:3])))'); echo $pyver; if ! [[ $pyver =~ 3\.6\.* ]]; then $PIP_CMD coverage==3.7.1 ; fi; $PIP_CMD codecov; fi
+  - echo $PYTHON_EXE
+  - if [ $Cov == 'true'  ]; then pyver=$($PYTHON_EXE -c 'import sys; print(".".join(map(str, sys.version_info[:3])))'); echo $pyver; if ! [[ $pyver =~ 3\.6\.* ]]; then $PIP_CMD coverage==3.7.1 ; fi; $PIP_CMD codecov; fi
 #install: 
 #  - if [ $UPnP == 'true'  ]; then $pipinstall miniupnpc; fi
 #  - $pipinstall -r requirements.txt
