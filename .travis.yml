@@ -1,79 +1,51 @@
 language: python
 matrix:
   include:
-#    - language: generic-covered
-#      python: 2.6
-#      os: osx
-#      env: Cov='true' pyver=2.6.6 pydist=macports
     - language: generic-covered
       python: 2.6
       os: osx
-      env: Cov='true' pyver=2.6.6 pydist=homebrew
+      env: Cov='true' pydist=homebrew
+#          pydist=macports
     - language: generic-covered
       python: 2.7
       os: osx
-      env: Cov='true' pyver=2.7.11 pydist=macpython
-#    - language: generic-covered
-#      python: 2.7
-#      os: osx
-#      env: Cov='true' pyver=2.7.11 pydist=macports
-#    - language: generic-covered
-#      python: 2.7
-#      os: osx
-#      env: Cov='true' pyver=2.7.11 pydist=homebrew
+      env: Cov='true' pydist=macpython
+#          pydist=macports
+#          pydist=homebrew
     - language: generic-covered
       python: 3.3
       os: osx
-      env: Cov='true' pyver=3.3.5 pydist=macpython
-#    - language: generic-covered
-#      python: 3.3
-#      os: osx
-#      env: Cov='true' pyver=3.3.5 pydist=macports
-#    - language: generic-covered
-#      python: 3.3
-#      os: osx
-#      env: Cov='true' pyver=3.3.5 pydist=homebrew
+      env: Cov='true' pydist=macpython
+#          pydist=macports
+#          pydist=homebrew
     - language: generic-covered
       python: 3.4
       os: osx
-      env: Cov='true' pyver=3.4.4 pydist=macpython
-#    - language: generic-covered
-#      python: 3.4
-#      os: osx
-#      env: Cov='true' pyver=3.4.4 pydist=macports
-#    - language: generic-covered
-#      python: 3.4
-#      os: osx
-#      env: Cov='true' pyver=3.4.4 pydist=homebrew
+      env: Cov='true' pydist=macpython
+#          pydist=macports
+#          pydist=homebrew
     - language: generic-covered
       python: 3.5
       os: osx
-      env: Cov='true' pyver=3.5.1 pydist=macpython
-#    - language: generic-covered
-#      python: 3.5
-#      os: osx
-#      env: Cov='true' pyver=3.5.1 pydist=macports
-#    - language: generic-covered
-#      python: 3.5
-#      os: osx
-#      env: Cov='true' pyver=3.5.1 pydist=homebrew
+      env: Cov='true' pydist=macpython
+#          pydist=macports
+#          pydist=homebrew
     - language: generic-covered
       python: pypy
       os: osx
-      env: Cov='true' pyver=pypy pydist=homebrew
+      env: Cov='true' pydist=homebrew
     - language: generic-covered
       python: pypy3
       os: osx
-      env: Cov='true' pyver=pypy3 pydist=homebrew
+      env: Cov='true' pydist=homebrew
 # command to install dependencies
 before_install:
-  - if [ $pyver != pypy ] && [ $pyver != pypy3 ]; then git clone https://github.com/gappleto97/terryfy; source terryfy/travis_tools.sh; get_python_environment  $pydist $pyver; fi
-  - if [ $pyver == pypy ] || [ $pyver == pypy3 ]; then brew install $pyver; PYTHON_EXE=$pyver; curl $GET_PIP_URL > $DOWNLOADS_SDIR/get-pip.py; sudo $PYTHON_EXE $DOWNLOADS_SDIR/get-pip.py --ignore-installed; PIP_CMD="sudo $PYTHON_EXE -m pip"; export PYTHON_EXE PIP_CMD; fi
+  - if [ $TRAVIS_PYTHON_VERSION != pypy ] && [ $TRAVIS_PYTHON_VERSION != pypy3 ]; then git clone https://github.com/gappleto97/terryfy; source terryfy/travis_tools.sh; get_python_environment  $pydist $TRAVIS_PYTHON_VERSION; fi
+  - if [ $TRAVIS_PYTHON_VERSION == pypy ] || [ $TRAVIS_PYTHON_VERSION == pypy3 ]; then brew install $TRAVIS_PYTHON_VERSION; PYTHON_EXE=$TRAVIS_PYTHON_VERSION; curl $GET_PIP_URL > $DOWNLOADS_SDIR/get-pip.py; sudo $PYTHON_EXE $DOWNLOADS_SDIR/get-pip.py --ignore-installed; PIP_CMD="sudo $PYTHON_EXE -m pip"; export PYTHON_EXE PIP_CMD; fi
   - $PIP_CMD install virtualenv
   - virtualenv -p $PYTHON_EXE venv
   - source venv/bin/activate
 # Everything after this is user editable
-  - echo $(python --version)
 install: 
   - if [ $Cov == 'true'  ]; then pyver=$(python -c 'import sys; print(".".join(map(str, sys.version_info[:3])))'); echo $pyver; if ! [[ $pyver =~ 3\.6\.* ]]; then pip install coverage==3.7.1 ; fi; pip install codecov; fi
 script: 
