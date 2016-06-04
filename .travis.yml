@@ -75,8 +75,11 @@ before_install:
   - git clone https://github.com/MacPython/terryfy
   - source terryfy/travis_tools.sh
   - get_python_environment  $pydist $pyver
-  - echo $PYTHON_EXE
-  - if [ $Cov == 'true'  ]; then pyver=$($PYTHON_EXE -c 'import sys; print(".".join(map(str, sys.version_info[:3])))'); echo $pyver; if ! [[ $pyver =~ 3\.6\.* ]]; then $PIP_CMD install coverage==3.7.1 ; fi; $PIP_CMD install codecov; fi
+  - $PIP_CMD install virtualenv
+  - virtualenv -p $PYTHON_EXE venv
+  - source venv/bin/activate
+  - echo $(python --version)
+  - if [ $Cov == 'true'  ]; then pyver=$(python -c 'import sys; print(".".join(map(str, sys.version_info[:3])))'); echo $pyver; if ! [[ $pyver =~ 3\.6\.* ]]; then pip install coverage==3.7.1 ; fi; pip install codecov; fi
 #install: 
 #  - if [ $UPnP == 'true'  ]; then $pipinstall miniupnpc; fi
 #  - $pipinstall -r requirements.txt
