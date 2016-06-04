@@ -10,11 +10,11 @@ Steps to integrate:
   2. Appveyor.org
   3. Shippable.org
 4. Enable your project on waffle.io
-5. Add your repo to codeclimate.com
-6. In each of these badges, change gappleto97 to [your username], CITest to [your repo name], or in these special cases:
+5. Add your repo to codeclimate.com (https://codeclimate.com/github/[username]/[repo name])
+6. In each of these badges, change gappleto97 to [username], CITest to [repo name], or in these special cases:
   * Shippable uses a project token. This means you need to copy it from your Shippable url
 7. Codecov uses a project token for its code uploads. Change this in the yaml files to that of your project
-  * Get this token by logging into codecov.io and going to https://codecov.io/gh/[username]/[reponame]
+  * Get this token by logging into codecov.io and going to https://codecov.io/gh/[username]/[repo name]
 8. In each of the yaml files, change the "test.py" line to run your actual tests
 9. On CodeClimate's website, enable the hooks for pull requests and issues
   * Go to the token settings in your GitHub account
