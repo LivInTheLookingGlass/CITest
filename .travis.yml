@@ -2,42 +2,10 @@ language: python
 repo_token: qtRAezgFkEsUBFIQrtXCxQRe2arC3H9Ta
 matrix:
   include:
-    - language: generic-covered
-      python: 2.7
-      os: osx
-      env: Cov='true' pyver=2.7.11 pydist=macpython
-    - language: generic-covered
-      python: 3.3
-      os: osx
-      env: Cov='true' pyver=3.3.5 pydist=macpython
-    - language: generic-covered
-      python: 3.4
-      os: osx
-      env: Cov='true' pyver=3.4.4 pydist=macpython
-    - language: generic-covered
-      python: 3.5
-      os: osx
-      env: Cov='true' pyver=3.5.1 pydist=macpython
-    - language: generic-covered
-      python: 2.6
-      os: osx
-      env: Cov='true' pyver=2.6.6 pydist=macports
-    - language: generic-covered
-      python: 2.7
-      os: osx
-      env: Cov='true' pyver=2.7.11 pydist=macports
-    - language: generic-covered
-      python: 3.3
-      os: osx
-      env: Cov='true' pyver=3.3.5 pydist=macports
-    - language: generic-covered
-      python: 3.4
-      os: osx
-      env: Cov='true' pyver=3.4.4 pydist=macports
-    - language: generic-covered
-      python: 3.5
-      os: osx
-      env: Cov='true' pyver=3.5.1 pydist=macports
+#    - language: generic-covered
+#      python: 2.6
+#      os: osx
+#      env: Cov='true' pyver=2.6.6 pydist=macports
     - language: generic-covered
       python: 2.6
       os: osx
@@ -45,19 +13,51 @@ matrix:
     - language: generic-covered
       python: 2.7
       os: osx
-      env: Cov='true' pyver=2.7.11 pydist=homebrew
+      env: Cov='true' pyver=2.7.11 pydist=macpython
+#    - language: generic-covered
+#      python: 2.7
+#      os: osx
+#      env: Cov='true' pyver=2.7.11 pydist=macports
+#    - language: generic-covered
+#      python: 2.7
+#      os: osx
+#      env: Cov='true' pyver=2.7.11 pydist=homebrew
     - language: generic-covered
       python: 3.3
       os: osx
-      env: Cov='true' pyver=3.3.5 pydist=homebrew
+      env: Cov='true' pyver=3.3.5 pydist=macpython
+#    - language: generic-covered
+#      python: 3.3
+#      os: osx
+#      env: Cov='true' pyver=3.3.5 pydist=macports
+#    - language: generic-covered
+#      python: 3.3
+#      os: osx
+#      env: Cov='true' pyver=3.3.5 pydist=homebrew
     - language: generic-covered
       python: 3.4
       os: osx
-      env: Cov='true' pyver=3.4.4 pydist=homebrew
+      env: Cov='true' pyver=3.4.4 pydist=macpython
+#    - language: generic-covered
+#      python: 3.4
+#      os: osx
+#      env: Cov='true' pyver=3.4.4 pydist=macports
+#    - language: generic-covered
+#      python: 3.4
+#      os: osx
+#      env: Cov='true' pyver=3.4.4 pydist=homebrew
     - language: generic-covered
       python: 3.5
       os: osx
-      env: Cov='true' pyver=3.5.1 pydist=homebrew
+      env: Cov='true' pyver=3.5.1 pydist=macpython
+#    - language: generic-covered
+#      python: 3.5
+#      os: osx
+#      env: Cov='true' pyver=3.5.1 pydist=macports
+#    - language: generic-covered
+#      python: 3.5
+#      os: osx
+#      env: Cov='true' pyver=3.5.1 pydist=homebrew
 #    - language: generic-covered
 #      python: pypy
 #      os: osx
