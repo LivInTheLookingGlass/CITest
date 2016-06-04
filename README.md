@@ -16,6 +16,10 @@ Steps to integrate:
 7. Codecov uses a project token for its code uploads. Change this in the yaml files to that of your project
   * Get this token by logging into codecov.io and going to https://codecov.io/gh/[username]/[reponame]
 8. In each of the yaml files, change the "test.py" line to run your actual tests
+9. On CodeClimate's website, enable the hooks for pull requests and issues
+  * Go to the token settings in your GitHub account
+  * Make a token with repo access
+  * Use this token for CodeClimate
 
 Websites:
 
