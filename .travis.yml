@@ -69,18 +69,17 @@ matrix:
 # command to install dependencies
 before_install:
   - if [ $pyver != pypy ] && [ $pyver != pypy3 ]; then git clone https://github.com/MacPython/terryfy; source terryfy/travis_tools.sh; get_python_environment  $pydist $pyver; fi
-  - if [ $pyver == pypy ]; then brew install pypy; PYTHON_EXE=pypy; curl $GET_PIP_URL > $DOWNLOADS_SDIR/get-pip.py; sudo $PYTHON_EXE $DOWNLOADS_SDIR/get-pip.py --ignore-installed; PIP_CMD="sudo $PYTHON_EXE -m pip"; export PYTHON_EXE PIP_CMD; fi
-  - if [ $pyver == pypy3 ]; then brew install pypy3; PYTHON_EXE=pypy3; curl $GET_PIP_URL > $DOWNLOADS_SDIR/get-pip.py; sudo $PYTHON_EXE $DOWNLOADS_SDIR/get-pip.py --ignore-installed; PIP_CMD="sudo $PYTHON_EXE -m pip"; export PYTHON_EXE PIP_CMD; fi
+  - if [ $pyver == pypy ] || [ $pyver == pypy3 ]; then brew install $pyver; PYTHON_EXE=$pyver; curl $GET_PIP_URL > $DOWNLOADS_SDIR/get-pip.py; sudo $PYTHON_EXE $DOWNLOADS_SDIR/get-pip.py --ignore-installed; PIP_CMD="sudo $PYTHON_EXE -m pip"; export PYTHON_EXE PIP_CMD; fi
   - $PIP_CMD install virtualenv
   - virtualenv -p $PYTHON_EXE venv
   - source venv/bin/activate
+# Everything after this is user editable
   - echo $(python --version)
+install: 
   - if [ $Cov == 'true'  ]; then pyver=$(python -c 'import sys; print(".".join(map(str, sys.version_info[:3])))'); echo $pyver; if ! [[ $pyver =~ 3\.6\.* ]]; then pip install coverage==3.7.1 ; fi; pip install codecov; fi
-#install: 
 #  - if [ $UPnP == 'true'  ]; then $pipinstall miniupnpc; fi
 #  - $pipinstall -r requirements.txt
 #  - $pipinstall -r optional.txt
-# command to run tests
 script: 
   - if [ $Cov == 'true'  ]; then python -m coverage run -a test.py; fi
   - if [ $Cov == 'false' ]; then python test.py; fi
