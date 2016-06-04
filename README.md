@@ -4,7 +4,7 @@
 
 Steps to integrate:
 
-1. Copy all files to your repo
+1. Copy all files to your repo (except README, of course)
 2. Enable CI integration on the following websites
   1. Travis-ci.org
   2. Appveyor.org
