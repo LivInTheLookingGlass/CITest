@@ -11,7 +11,6 @@ python:
 
 build:
   ci:
-    - pyver=$(python -c 'import sys; print(".".join(map(str, sys.version_info[:3])))')
     - pip install codecov
     - coverage run -a test.py
   on_success:
