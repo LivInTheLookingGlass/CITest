@@ -3,10 +3,6 @@ repo_token: qtRAezgFkEsUBFIQrtXCxQRe2arC3H9Ta
 matrix:
   include:
     - language: generic-covered
-      python: 2.6
-      os: osx
-      env: Cov='true' pyver=2.6.6 pydist=macpython
-    - language: generic-covered
       python: 2.7
       os: osx
       env: Cov='true' pyver=2.7.11 pydist=macpython
@@ -86,7 +82,7 @@ before_install:
 #  - $pipinstall -r optional.txt
 # command to run tests
 script: 
-  - if [ $Cov == 'true'  ]; then $PYTHON_CMD -m coverage run -a test.py; fi
-  - if [ $Cov == 'false' ]; then $PYTHON_CMD test.py; fi
+  - if [ $Cov == 'true'  ]; then python -m coverage run -a test.py; fi
+  - if [ $Cov == 'false' ]; then python test.py; fi
 after_success:
 #  - if [ $Cov == 'true'  ]; then $coverage combine; codecov --token=0482d032-e24c-461b-a116-f0e3dbc88734; fi
