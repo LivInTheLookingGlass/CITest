@@ -1,6 +1,6 @@
 # CITest
 
-[ ![Shippable Status for gappleto97/CITest](https://img.shields.io/shippable/5699df471895ca44746ffb9f/master.svg?maxAge=2592000&label=Linux)](https://app.shippable.com/projects/5699df471895ca44746ffb9f) [ ![Travis-CI Status for gappleto97/CITest](https://img.shields.io/travis/gappleto97/CITest/master.svg?maxAge=2592000&label=OSX)](https://travis-ci.org/gappleto97/CITest) [ ![Appveyor Status for gappleto97/CITest](https://img.shields.io/appveyor/ci/gruntjs/grunt/master.svg?maxAge=2592000&label=Windows)](https://ci.appveyor.com/project/gappleto97/citest)
+[ ![Shippable Status for gappleto97/CITest](https://img.shields.io/shippable/5699df471895ca44746ffb9f/master.svg?maxAge=3600&label=Linux)](https://app.shippable.com/projects/5699df471895ca44746ffb9f) [ ![Travis-CI Status for gappleto97/CITest](https://img.shields.io/travis/gappleto97/CITest/master.svg?maxAge=3600&label=OSX)](https://travis-ci.org/gappleto97/CITest) [ ![Appveyor Status for gappleto97/CITest](https://img.shields.io/appveyor/ci/gruntjs/grunt/master.svg?maxAge=3600&label=Windows)](https://ci.appveyor.com/project/gappleto97/citest)
 
 Steps to integrate:
 
