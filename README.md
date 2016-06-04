@@ -14,3 +14,4 @@ Steps to integrate:
 5. In each of these badges, change gappleto97 to [your username], CITest to [your repo name], or in these special cases:
   1. Shippable uses a project token. This means you need to copy it from your Shippable url
 6. Codecov uses a project token for its code uploads. Change this in the yaml files to that of your project
+  * Get this token by logging into codecov.io and going to https://codecov.io/gh/[username]/[reponame]
