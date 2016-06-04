@@ -1,5 +1,4 @@
 language: python
-repo_token: qtRAezgFkEsUBFIQrtXCxQRe2arC3H9Ta
 matrix:
   include:
 #    - language: generic-covered
